@@ -1,0 +1,44 @@
+{{ partial "default_head.html" . }}
+
+<!-- Space delimited list of page types -->
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+
+<div class="posts">
+  {{ range .Paginator.Pages }}
+
+
+  <article class="post" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header>
+<div class="title align-center">
+<h2><a href="{{ .Permalink }}" itemprop="url"><span itemprop="name">Renungan Harian<br />{{ .Title }}</span></a></h2>
+</div>
+</header>
+<div class="align-center" itemprop="description">
+<div class="headayat">{{ .Params.isiayat | safeHTML }}</div>
+<div class="headayat">{{ .Params.ayat }}</div>
+</div>
+<footer>
+<hr />
+</footer>
+</article>
+
+
+
+  {{ end }}
+</div>
+
+<div class="pagination">
+  {{ if $paginator.HasNext }}
+  <a class="pagination-item older" href="{{ $paginator.Next.URL }}">Older</a>
+  {{ else }}
+  <span class="pagination-item older">Older</span>
+  {{ end }}
+
+  {{ if $paginator.HasPrev }}
+  <a class="pagination-item newer" href="{{ $paginator.Prev.URL }}">Newer</a>
+  {{ else }}
+  <span class="pagination-item newer">Newer</span>
+  {{ end }}
+</div>
+
+{{ partial "default_foot.html" . }}

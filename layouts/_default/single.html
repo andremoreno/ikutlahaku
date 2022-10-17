@@ -1,0 +1,95 @@
+{{ partial "default_head.html" . }}
+
+{{ $shareurl := printf "%s" .Permalink | safeURL }}
+{{ $sharetitle := print "Renungan Hari " .Title | safeURL }}
+{{ $iasharewa := print "Renungan Hari " urlquery .Title " - " .Params.ayat " - " .Permalink }}
+
+<article class="post" itemscope itemtype="http://schema.org/Article">
+	<header>
+		<h1 class="post-title align-center" itemprop="name">Renungan Harian<br />{{ .Title }}</h1>
+	</header>
+
+	<time class="op-published" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"></time>
+	<time class="op-modified" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"></time>
+
+	<meta itemprop="url" content="{{ .Permalink }}" />
+	<span itemprop="author" content="Ikutlah Aku"></span>
+	<span itemprop="publisher" content="https://plus.google.com/102150360200255682268"></span>
+
+	<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject" content="{{ .Params.image | absURL }}"></span>
+
+    <span itemprop="logo" content="{{ "/img/ia_512.png" | absURL }}"></span>
+
+
+
+	<div class="entry" itemprop="articleBody">
+	<div class="headayat">{{ .Params.isiayat | safeHTML }}</div>
+	<div class="headayat">{{ .Params.ayat }}</div>
+
+	<hr />
+	{{ .Content | safeHTML }}
+	</div>
+	<hr />
+
+	<div class="pagination">
+	<div style="width:48%; display: inline-block">
+	{{ if .PrevInSection }}
+	<a class="older iasprt iaprevious" href="{{.PrevInSection.Permalink}}">&nbsp;</a>
+	{{ else }}
+	<span class="older">&nbsp;</span>
+	{{ end }}
+	</div>
+
+	<div style="width:48%; display: inline-block;">
+
+	{{ if .NextInSection }}
+	<a class="iasprt ianext" href="{{.NextInSection.Permalink}}">&nbsp;</a>
+	{{ else }}
+	<span class="newer">&nbsp;</span>
+	{{ end }}
+	</div>
+	</div>
+
+	<hr />
+	<h4>Beritakan Kabar Baik</h4>
+	<p><a href="https://www.facebook.com/sharer.php?u={{ $shareurl }}" class="iasprt iasharefacebook" target="_blank" rel="nofollow" data-href="{{ .Permalink }}" >&nbsp;</a>&nbsp; 
+
+	<a href="https://twitter.com/intent/tweet?text={{ $iasharewa | safeURL }} via @IAdotcom #IkutlahAku #HKBPRawamangun" class="iasprt iasharetwitter" target="_blank" rel="nofollow" >&nbsp;</a>&nbsp; 
+
+	<a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{ .Permalink }}" class="iasprt iasharegoogleplus" target="_blank" rel="nofollow">&nbsp;</a>&nbsp; 
+
+	<a href="https://pinterest.com/pin/create/bookmarklet/?media={{.Params.image | absURL }}&amp;url={{ .Permalink }}&amp;is_video=false&amp;description={{ $sharetitle | safeURL }}" class="iasprt iasharepinterest" target="_blank" rel="nofollow">&nbsp;</a>&nbsp; </p>
+
+	<p><a href="whatsapp://send?text={{ $iasharewa | safeURL }}" class="iasprt iasharewhatsapp" target="_blank" rel="nofollow">&nbsp;</a>&nbsp; 
+
+	<a href="telegram://msg?text={{ $iasharewa | safeURL }}" class="iasprt iasharetelegram" target="_blank" rel="nofollow">&nbsp;</a>&nbsp; 
+
+	<a href="https://line.me/R/msg/text/?{{ $iasharewa | safeURL }}" class="iasprt iashareline" target="_blank" rel="nofollow">&nbsp;</a>&nbsp; 
+
+
+	
+	</p>
+
+	<div id="fb-root"></div>
+	<div data-lazy-widget="fb_1" class="fb-like" data-href="{{ .Permalink }}" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+
+	<div id="fb_1"><!-- <script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId={{ .Site.Params.fb_app_id}}";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>--></div>
+	
+	<hr />
+
+	<h4>Komentar</h4>
+
+	<div data-lazy-widget="fb_1" class="fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="5"></div>
+
+	<footer></footer>
+</article>
+
+
+
+{{ partial "default_foot.html" . }}

@@ -1,0 +1,30 @@
+baseURL       = "https://ikutlahaku.andremoreno.com/"
+languageCode  = "en-us"
+title         = "Andre Moreno"
+encoding      = "utf-8"
+timezone      = "Asia/Jakarta"
+uglyURLs      = true
+
+
+
+disableHugoGeneratorInject = true
+canonifyurls = true
+
+# Open Graph
+fb_app_id = 317214381755008
+twitter_handle = "@IAdotcom"
+
+[permalinks]
+post = ":year/:month/:day"
+fixed = ":title/"
+
+[params]
+Title = "Ikutlah Aku"
+Tagline = "Renungan Harian"
+disableFonts = false
+
+
+[markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xhtml = true
