@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "netlify-plugin-amp-server-side-rendering": "^1.0.3"
+  }
+}

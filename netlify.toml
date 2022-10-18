@@ -2,3 +2,12 @@
   publish = "public"
   command = "hugo --gc --minify"
 
+[build.environment]
+  HUGO_VERSION = "0.104.3"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+
+[[plugins]]
+  package = "netlify-plugin-amp-server-side-rendering"
+
