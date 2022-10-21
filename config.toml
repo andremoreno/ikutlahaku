@@ -5,8 +5,6 @@ encoding      = "utf-8"
 timezone      = "Asia/Jakarta"
 uglyURLs      = true
 
-
-
 disableHugoGeneratorInject = true
 canonifyurls = true
 
@@ -17,6 +15,9 @@ twitter_handle = "@IAdotcom"
 [permalinks]
 post = ":year/:month/:day"
 fixed = ":title/"
+archm = "/:year/:month/"
+archy = "/:year/"
+
 
 [params]
 Title = "Ikutlah Aku"

@@ -3,8 +3,19 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
     {{ template "_internal/google_analytics_async.html" . }}
-	<script>
-	(function(document) {
+
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+{{ $bibleref := resources.Get "js/bibleref.js" }}
+{{ $stayInWebApp := resources.Get "js/jquery.stayInWebApp.js" }}
+{{ $pace := resources.Get "js/pace.js" }}
+{{ $lazyloadxt := resources.Get "js/jquery.lazyloadxt.js" }}
+{{ $lazyloadxtw := resources.Get "js/jquery.lazyloadxt.widget.js" }}
+{{ $js := slice $jquery $bibleref $stayInWebApp $pace $lazyloadxt $lazyloadxtw | resources.Concat "js/bundle.js" }}
+
+<script src="{{ $js.RelPermalink }}"></script>
+
+<script>
+(function(document) {
 	var toggle = document.querySelector('.sidebar-toggle');
 	var sidebar = document.querySelector('#sidebar');
 	var checkbox = document.querySelector('#sidebar-checkbox');
@@ -18,6 +29,39 @@
 	document.addEventListener('click', toggleSidebar, false);
 	document.addEventListener('touchstart', toggleSidebar, false);
 })(document);
-	</script>
+
+
+$(document).ready(function() {
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.iatop').fadeIn();
+		} else {
+			$('.iatop').fadeOut();
+		}
+	});
+
+	//Click event to scroll to top
+	$('.iatop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+});
+
+
+jQuery(document).ready(function($) {
+    $('a').not('[href*="mailto:"]').each(function () {
+		var isInternalLink = new RegExp('/' + window.location.host + '/');
+		if ( ! isInternalLink.test(this.href) ) {
+			$(this).attr('target', '_blank');
+		}
+	});
+});
+
+
+
+</script>
+
+
   </body>
 </html>
