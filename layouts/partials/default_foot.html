@@ -10,7 +10,7 @@
 {{ $pace := resources.Get "js/pace.js" }}
 {{ $lazyloadxt := resources.Get "js/jquery.lazyloadxt.js" }}
 {{ $lazyloadxtw := resources.Get "js/jquery.lazyloadxt.widget.js" }}
-{{ $js := slice $jquery $bibleref $stayInWebApp $pace $lazyloadxt $lazyloadxtw | resources.Concat "js/bundle.js" }}
+{{ $js := slice $jquery $bibleref $stayInWebApp $pace | resources.Concat "js/bundle.js" }}
 
 <script src="{{ $js.RelPermalink }}"></script>
 
