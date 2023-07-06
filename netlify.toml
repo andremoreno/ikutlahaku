@@ -8,14 +8,14 @@
   HUGO_ENABLEGITINFO = "true"
 
 
-[[redirects]]
-  from = "https://ikutlahaku.hkbp.tech/*"
-  to = "https://ikutlahaku.andremoreno.com/:splat"
-  status = 301
-  force = true
+#[[redirects]]
+#  from = "https://ikutlahaku.hkbp.tech/*"
+#  to = "https://ikutlahaku.andremoreno.com/:splat"
+#  status = 301
+#  force = true
 [[redirects]]
   from = "https://ikutlahaku.netlify.app/*"
-  to = "https://ikutlahaku.andremoreno.com/:splat"
+  to = "https://ikutlahaku.hkbp.tech/:splat"
   status = 301
   force = true
 
