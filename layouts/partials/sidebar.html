@@ -10,7 +10,7 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item {{ if .IsHome }} active {{ end }}" href="/">Home</a>
-    <a class="sidebar-nav-item {{ if eq .RelPermalink "/post/" }} active {{ end }}" href="/post">Posts</a>
+    <a class="sidebar-nav-item {{ if eq .RelPermalink "/post/" }} active {{ end }}" href="/post.html">Posts</a>
     {{- $currentPage := . }}
     {{- range .Site.Menus.main -}}
     <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
@@ -39,6 +39,6 @@
   </nav>
 
   <div class="sidebar-item">
-    <small>Made with ❤️ by <a href="http://www.andremoreno.com" target="_blank">Andre Moreno</a></small>
+    <small>Made with ❤️ by <a href="http://www.andremoreno.id" target="_blank">Andre Moreno</a></small>
   </div>
 </div>
