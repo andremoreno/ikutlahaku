@@ -13,7 +13,7 @@
 		$scope.class    = $scope.class    ||  '';
 		$scope.version  = $scope.version  ||  'TB';
 		$scope.abbr     = $scope.abbr     ||  false;
-		$scope.url      = $scope.url      ||  'https://alkitab.hkbprawamangun.com/$BIBLEREF';
+		$scope.url      = $scope.url      ||  'https://alkitab.mobi/tb/passage/$BIBLEREF';
 		$scope.urlSpace = $scope.urlSpace ||  '+';
 		$scope.render   = $scope.render   ||  '<strong><a data-bible-ref href="$URL">$BIBLEREF</a></strong>';
 		$scope.range    = this;
