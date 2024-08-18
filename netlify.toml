@@ -10,10 +10,21 @@
 
 [[redirects]]
   from = "https://ikutlahaku.netlify.app/*"
-  to = "https://ikutlahaku.hkbprawamangun.com/:splat"
+  to = "https://ikutlahaku.com/:splat"
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://ikutlahaku.hkbprawamangun.com/*"
+  to = "https://ikutlahaku.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ikutlahaku.andremoreno.id/*"
+  to = "https://ikutlahaku.com/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/*"
