@@ -3,26 +3,26 @@
   command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.130.0"
-  GO_VERSION = "1.22.5"
+  HUGO_VERSION = "0.133.0"
+  GO_VERSION = "1.23.0"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
 
 [[redirects]]
   from = "https://ikutlahaku.netlify.app/*"
-  to = "https://ikutlahaku.com/:splat"
+  to = "https://www.ikutlahaku.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://ikutlahaku.hkbprawamangun.com/*"
-  to = "https://ikutlahaku.com/:splat"
+  to = "https://www.ikutlahaku.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://ikutlahaku.andremoreno.id/*"
-  to = "https://ikutlahaku.com/:splat"
+  to = "https://www.ikutlahaku.com/:splat"
   status = 301
   force = true
 
