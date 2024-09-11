@@ -14,7 +14,8 @@
 
   <!-- CSS -->
   {{ "<!-- Bootstrap -->" | safeHTML }}
-  {{ $bootstrap := resources.Get "scss/default.scss" | resources.ToCSS | minify }}
+  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/default.css" }}
+  {{ $bootstrap := resources.Get "scss/default.scss" | toCSS $opts | minify | resources.Fingerprint "sha512" }}
   <link rel="preload" href="{{ $bootstrap.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ $bootstrap.Permalink }}"></noscript>
 

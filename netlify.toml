@@ -1,10 +1,10 @@
 [build]
-  publish = "public"
   command = "hugo --gc --minify"
+  publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.133.1"
-  GO_VERSION = "1.23.0"
+  HUGO_VERSION = "0.134.1"
+  GO_VERSION = "1.23.1"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
 
