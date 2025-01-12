@@ -11,6 +11,7 @@
       Renungan Hari {{ .Title }} &middot; {{ .Site.Params.Title }}
     {{ end }}
   </title>
+  {{ partialCached "critical.html" . }}
 
   <!-- CSS -->
   {{ "<!-- Bootstrap -->" | safeHTML }}
